@@ -4,22 +4,42 @@ import (
 	"fmt"
 )
 
-func main(){
-	var a int
-	var b int 
-	fmt.Scanln(&a)
-	fmt.Scanln(&b)
+func subalg(a int , b int) int {
 	var c int
 	
 	if b>a {
 		for c=0;a<b;c++ {
 			a++
 		}
-		fmt.Println("la diferencia es de ",c)
 	}else{
 		for c=0;b<a;c++ {
 			b++
 		}
-		fmt.Println("la diferencia es de ",c)
 	}
+	return c
+}
+func multalg(a int,b int) int {
+	c:= a
+	for i:=1;i<b;i++{
+		c=c+a
+	}
+	return c
+}
+func divalg(a int,b int) int{
+	c:=a
+	var i int
+	for i=0;c>0;i++{
+		c=c-b
+	}
+	fmt.Println(i)
+	return i
+}
+
+func main(){
+	var a,b int
+	fmt.Scanln(&a)
+	fmt.Scanln(&b)
+	fmt.Println(a,"-",b,"=",subalg(a,b))
+	fmt.Println(a,"*",b,"=",multalg(a,b))
+	divalg(a,b)
 }
